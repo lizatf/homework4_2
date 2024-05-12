@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -7,6 +8,16 @@ public class Main {
         System.out.print("Введите размер массива: ");
         int size = scanner.nextInt();
         int[] array = new int[size];
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(10);
+        }
         System.out.println(Arrays.toString(array));
+        int max = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > max)
+                max = array[i];
+        }
+        System.out.println("Максимальное значение в массиве: " + max);
     }
 }
